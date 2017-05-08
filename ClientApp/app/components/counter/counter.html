@@ -1,6 +1,8 @@
 <template>
     <require from="aurelia-kendoui-bridge/grid/grid"></require>
     <require from="aurelia-kendoui-bridge/grid/col"></require>
+    <require from="aurelia-kendoui-bridge/tabstrip/tabstrip"></require>
+
     <h1>Counter123</h1>
 
     <p>This is a simple example of an Aurelia component.</p>
@@ -8,21 +10,63 @@
     <p>Current count: <strong>${currentCount}</strong></p>
 
     <button click.delegate="incrementCounter()">Increment</button>
-              <ak-grid>
-    <table>
-      <thead>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-        </tr>
-      </thead>
-      
-      <tbody>
-        <tr>
-          <td>Foo</td>
-          <td>Bar</td>
-        </tr>
-      </tbody>
-    </table>
-  </ak-grid>
+
+
+    <div id="tabstrip" ak-tabstrip="k-animation.bind: { open: { effects: 'fadeIn' } }">
+      <ul>
+        <li class="k-state-active">
+          Paris
+        </li>
+        <li>
+          New York
+        </li>
+        <li>
+          London
+        </li>
+        <li>
+          Moscow
+        </li>
+      </ul>
+      <div>
+              
+        <ak-grid>
+          <table>
+            <thead>
+              <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+              </tr>
+            </thead>
+            
+            <tbody>
+              <tr>
+                <td>Foo</td>
+                <td>Bar</td>
+              </tr>
+            </tbody>
+          </table>
+        </ak-grid>
+      </div>
+      <div>
+        <span class="sunny">&nbsp;</span>
+        <div class="weather">
+          <h2>29<span>&ordm;C</span></h2>
+          <p>Sunny weather in New York.</p>
+        </div>
+      </div>
+      <div>
+        <span class="sunny">&nbsp;</span>
+        <div class="weather">
+          <h2>21<span>&ordm;C</span></h2>
+          <p>Sunny weather in London.</p>
+        </div>
+      </div>
+      <div>
+        <span class="cloudy">&nbsp;</span>
+        <div class="weather">
+          <h2>16<span>&ordm;C</span></h2>
+          <p>Cloudy weather in Moscow.</p>
+        </div>
+      </div>
+    </div>
 </template>
